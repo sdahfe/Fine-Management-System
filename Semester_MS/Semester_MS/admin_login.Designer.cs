@@ -67,6 +67,7 @@
             this.admin_name.TabIndex = 0;
             this.admin_name.Text = "admin";
             this.admin_name.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.admin_name.KeyDown += new System.Windows.Forms.KeyEventHandler(this.admin_name_KeyDown);
             this.admin_name.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.admin_name_KeyPress);
             // 
             // admin_password
@@ -79,6 +80,7 @@
             this.admin_password.Size = new System.Drawing.Size(137, 24);
             this.admin_password.TabIndex = 1;
             this.admin_password.TextChanged += new System.EventHandler(this.password_TextChanged);
+            this.admin_password.KeyDown += new System.Windows.Forms.KeyEventHandler(this.admin_password_KeyDown);
             this.admin_password.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.admin_password_KeyPress);
             // 
             // button2

@@ -137,19 +137,58 @@ namespace Semester_MS
         //This function will making the keyPress event on Enter key
         private void admin_name_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-                authenticate();
+            //if (e.KeyChar == (char)Keys.Enter)
+              //  authenticate();
         }
         //This function will making the keyPress event on Enter key
         private void admin_password_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter)
-                authenticate();
+           // if (e.KeyChar == (char)Keys.Enter)
+               // authenticate();
         }
 
         private void admin_panel_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void admin_name_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode== Keys.Enter)
+            {
+                Focus_adminname();
+            }
+        }
+        private void Focus_adminname()
+        {
+            if(admin_name.TextLength > 0)
+            {
+                admin_password.Focus();
+            }
+            else
+            {
+                admin_name.Focus();
+            }
+        }
+
+        private void admin_password_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Focus_adminpassword();
+            }
+        }
+        private void Focus_adminpassword()
+        {
+            if (admin_name.TextLength > 0)
+            {
+                button1.Focus();
+                authenticate();
+            }
+            else
+            {
+                admin_password.Focus();
+            }
         }
     }
 }

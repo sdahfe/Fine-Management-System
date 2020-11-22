@@ -1,0 +1,9 @@
+select * from virtualtbl
+where roll_no=6
+and 
+fine in
+(select  max( fine) 
+from virtualtbl 
+where roll_no=6
+group by roll_no
+) 

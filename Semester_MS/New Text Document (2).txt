@@ -1,0 +1,6 @@
+DialogResult d;      
+          d=MessageBox.Show("Welcome to C# Corner","Learn C#", MessageBoxButtons.YesNo, MessageBoxIcon.Information);      
+          if(d==DialogResult.Yes)      
+          {      
+              Close();      
+          }      

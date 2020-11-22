@@ -1,0 +1,29 @@
+select   manualFinetbl.roll_no AS [Roll No], 
+						   max(
+						  teachertbl.t_name
+						 ) 
+						  AS [Prof. Name],
+                          max(
+						  subjecttbl.subject_name
+						) 
+						  AS Subject, 
+						 max(
+						  manualFinetbl.absenties
+						 ) 
+						  AS Absentees,
+                        max(
+						  manualFinetbl.status
+						) 
+						  AS Status,
+                        max(
+						  manualFinetbl.fine
+						) 
+						  AS Fine 
+						  from manualFinetbl , teachertbl, subjecttbl 
+                          where manualFinetbl.year='2020' and manualFinetbl.class_name=
+						  '2nd Year' and manualFinetbl.teacher_id=teachertbl.teacher_id 
+                          and manualFinetbl.subject_id= subjecttbl.subject_id
+                   and manualFinetbl.month='10' 
+                   group by roll_no
+				   order by [Roll No] , 
+							Absentees desc;
